@@ -6,6 +6,9 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue'
+const axios: any = inject('axios')
+console.log(axios)
 defineProps({
   name: String,
 });
