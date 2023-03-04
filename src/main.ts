@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
+import { IonicVue } from '@ionic/vue';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 import App from './App.vue'
 import router from './router';
-
-import { IonicVue } from '@ionic/vue';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -23,9 +24,13 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+// Setup the Vue App
 const app = createApp(App)
   .use(IonicVue)
-  .use(router);
+  .use(router)
+  .use(VueAxios, axios);
+
+app.provide('axios', app.config.globalProperties.axios)
   
 router.isReady().then(() => {
   app.mount('#app');
