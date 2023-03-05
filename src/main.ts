@@ -27,6 +27,9 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+// Plugins
+import '@capacitor-community/camera-preview'
+
 // Create the app store using Pinia
 const pinia = createPinia();
 

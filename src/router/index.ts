@@ -1,7 +1,7 @@
 import { useAuthStore } from '../store';
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
+import AppFrame from '../views/AppFrame.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/tabs/',
-    component: TabsPage,
+    component: AppFrame,
     children: [
       {
         path: '',
@@ -24,19 +24,27 @@ const routes: Array<RouteRecordRaw> = [
       {
         name: 'home',
         path: 'home',
-        component: () => import('@/views/Tab1Page.vue'),
+        component: () => import('../views/CameraScreen.vue'),
         meta: {
           requiresAuth: true
         }
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        name: 'logs',
+        path: 'logs',
+        component: () => import('../views/LogsScreen.vue'),
+        meta: {
+          requiresAuth: true
+        }
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
-      }
+        name: 'settings',
+        path: 'settings',
+        component: () => import('../views/SettingsScreen.vue'),
+        meta: {
+          requiresAuth: true
+        }
+      },
     ]
   }
 ]
@@ -52,6 +60,8 @@ router.beforeEach(async (to, from, next): Promise<void> => {
   
   if (requiresAuth && !isLoggedIn) {
     return next({ name: 'login' });
+  } else if (isLoggedIn && to.name === 'login') {
+    return next({ name: 'home' });
   }
   
   next();
