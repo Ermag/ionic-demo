@@ -71,6 +71,22 @@ npm run build
 ```
 This will generate a dist directory containing the compiled application files. You can then deploy the application to a web server or package it for distribution in the app stores.
 
+### iOS
+1. Make sure that your environment cover [those requirements](https://capacitorjs.com/docs/getting-started/environment-setup#ios-requirements).
+2. Follow the installation instructions.
+3. Build the app:
+```
+npm run build
+```
+4. Sync the web to the native iOS project:
+```
+npx cap sync
+```
+5. Open the iOS project in Xcode
+```
+npx cap open ios
+```
+
 ## Built with
 
 - [Ionic](https://ionicframework.com/docs/vue/overview)

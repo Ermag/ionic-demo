@@ -73,7 +73,8 @@
   const startCamera = async () => {
     try {
       await Plugins.CameraPreview.start({ 
-        parent: 'camera-preview'
+        parent: 'camera-preview',
+        disableAudio: true,
       });
       isCameraActive.value = true;
       cameraImage.value = '';
@@ -119,7 +120,7 @@
         await toast.present();
         await startCamera();
       } else {
-        throw new Error('Unexpected result.')
+        throw new Error('Unexpected result.');
       }
     } catch (error) {
       hasError.value = true;
