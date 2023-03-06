@@ -1,0 +1,18 @@
+{
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "logout": "Logout",
+    "cancel": "Cancel",
+    "send": "Send",
+    "camera": "Camera",
+    "logs": "Logs",
+    "settings": "Settings",
+    "errors": {
+        "generic": "Something went wrong, please try again later."
+    },
+    "messages": {
+        "noLogs": "There are no records to show.",
+        "noCredentials": "Unable to obtain credentials, please try again later."
+    }
+}

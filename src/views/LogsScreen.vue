@@ -2,13 +2,13 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Logs</ion-title>
+        <ion-title>{{ t('logs') }}</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Logs</ion-title>
+          <ion-title size="large">{{ t('logs') }}</ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -25,5 +25,8 @@
     IonTitle,
     IonContent,
   } from '@ionic/vue';
-  import LogItems from '../components/LogItems.vue'
+  import LogItems from '../components/LogItems.vue';
+  import { useI18n } from 'vue-i18n';
+
+  const { t } = useI18n();
 </script>

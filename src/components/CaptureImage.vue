@@ -28,12 +28,12 @@
     <ion-row v-else>
       <ion-col>
         <ion-button expand="block" fill="outline" color="medium" @click="doCancel">
-          Cancel
+          {{ t('cancel') }}
         </ion-button>
       </ion-col>
       <ion-col>
         <ion-button expand="block" color="success" @click="doSend">
-          Send
+          {{ t('send') }}
         </ion-button>
       </ion-col>
     </ion-row>
@@ -41,7 +41,7 @@
     <ion-row v-if="hasError">
       <ion-col class="ion-text-center">
         <ion-label color="danger">
-          Something went wrong, please try again later.
+          {{ t('errors.generic') }}
         </ion-label>
       </ion-col>
     </ion-row>
@@ -64,7 +64,9 @@
   import { ref, inject } from 'vue';
   import { Plugins } from '@capacitor/core';
   import { CameraPreviewOptions, CameraPreviewPictureOptions } from '@capacitor-community/camera-preview';
+  import { useI18n } from 'vue-i18n';
 
+  const { t } = useI18n();
   const axios: any = inject('axios');
   const cameraImage: any = ref('');
   const isCameraActive: any = ref(true);

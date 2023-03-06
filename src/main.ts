@@ -4,6 +4,7 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import { createPinia } from 'pinia'
 import './plugins/axios';
+import { i18n } from './plugins/i18n';
 import App from './App.vue'
 import router from './router';
 import { APP_CONFIG } from './config';
@@ -38,6 +39,7 @@ const app = createApp(App)
   .use(IonicVue)
   .use(pinia)
   .use(router)
+  .use(i18n)
   .use(VueAxios, axios);
 
 // Set providers

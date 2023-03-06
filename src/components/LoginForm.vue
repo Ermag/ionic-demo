@@ -1,18 +1,18 @@
 <template>
   <form class="login-form" @submit.prevent="submitForm">
     <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
+      <ion-label position="floating">{{ t('email') }}</ion-label>
       <ion-input v-model="email" type="text" required></ion-input>
     </ion-item>
     <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
+      <ion-label position="floating">{{ t('password') }}</ion-label>
       <ion-input v-model="password" type="password" required></ion-input>
     </ion-item>
     <div class="ion-padding ion-text-center">
       <ion-spinner v-if="isLoading" name="circular"></ion-spinner>
-      <ion-button v-else type="submit" expand="block" :disabled="!isValid">Login</ion-button>
+      <ion-button v-else type="submit" expand="block" :disabled="!isValid">{{ t('login') }}</ion-button>
     </div>
-    <ion-label color="danger" class="ion-padding ion-text-center">{{ authError }}</ion-label>
+    <ion-label color="danger" class="ion-padding ion-text-center">{{ authError ? t(authError) : '' }}</ion-label>
   </form>
 </template>
   
@@ -28,7 +28,9 @@
   import { useRouter } from 'vue-router';
   import { storeToRefs } from 'pinia';
   import { useAuthStore } from '../store';
+  import { useI18n } from 'vue-i18n';
 
+  const { t } = useI18n();
   const store = useAuthStore();
   const router = useRouter();
   const { login } = store;

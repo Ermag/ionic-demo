@@ -2,13 +2,13 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Settings</ion-title>
+        <ion-title>{{ t('settings') }}</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Settings</ion-title>
+          <ion-title size="large">{{ t('settings') }}</ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -25,5 +25,8 @@
       IonTitle, 
       IonContent,
   } from '@ionic/vue';
-  import LogoutButton from '../components/LogoutButton.vue'
+  import LogoutButton from '../components/LogoutButton.vue';
+  import { useI18n } from 'vue-i18n';
+
+  const { t } = useI18n();
 </script>

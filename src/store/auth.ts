@@ -34,11 +34,11 @@ export const useAuthStore = defineStore('authStore', {
           this.token = auth_token;
           this.error = null;
         } else {
-          throw new Error('Unexpected result.')
+          throw new Error('unexpectedResult')
         }
       } catch (error: any) {
         response.status = 'failure';
-        this.error = 'Unable to obtain credentials, please try again later.';
+        this.error = 'noCredentials';
       }
 
       return response;
