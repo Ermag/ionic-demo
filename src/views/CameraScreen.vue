@@ -1,3 +1,9 @@
+<style scoped>
+  #camera-screen-content {
+    --background: transparent;
+  }
+</style>
+
 <template>
   <ion-page>
     <ion-header>
@@ -5,7 +11,7 @@
         <ion-title>Camera</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true">
+    <ion-content id="camera-screen-content" :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Camera</ion-title>

@@ -1,6 +1,7 @@
 <style>
   #camera-preview video {
-    width: 100%;
+    max-width: 100%;
+    max-height: 480px;
   }
 </style>
 
@@ -62,7 +63,7 @@
   import { camera } from 'ionicons/icons';
   import { ref, inject } from 'vue';
   import { Plugins } from '@capacitor/core';
-  import { CameraPreviewPictureOptions } from '@capacitor-community/camera-preview';
+  import { CameraPreviewOptions, CameraPreviewPictureOptions } from '@capacitor-community/camera-preview';
 
   const axios: any = inject('axios');
   const cameraImage: any = ref('');
@@ -72,10 +73,15 @@
 
   const startCamera = async () => {
     try {
-      await Plugins.CameraPreview.start({ 
+      const cameraPreviewOptions: CameraPreviewOptions = {
         parent: 'camera-preview',
+        toBack: true,
+        position: 'rear',
         disableAudio: true,
-      });
+        height: 480,
+        y: 90
+      };
+      await Plugins.CameraPreview.start(cameraPreviewOptions);
       isCameraActive.value = true;
       cameraImage.value = '';
       hasError.value = false;
