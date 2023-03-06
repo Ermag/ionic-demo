@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import { IonicVue } from '@ionic/vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-import './plugins/axios';
 import { createPinia } from 'pinia'
+import './plugins/axios';
 import App from './App.vue'
 import router from './router';
 import { APP_CONFIG } from './config';
@@ -43,7 +43,7 @@ const app = createApp(App)
 // Set providers
 app.provide('axios', app.config.globalProperties.axios);
 app.provide('$config', APP_CONFIG);
-  
+
 router.isReady().then(() => {
   app.mount('#app');
 });

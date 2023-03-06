@@ -1,14 +1,15 @@
 import { defineStore } from 'pinia';
+import { retrieveLogs } from '../services/logs';
 
 interface LogRecord {
-    timestamp: number;
-    label: string;
+  timestamp: number;
+  label: string;
 }
 
-type RecordItems = Array<LogRecord>
+export type LogRecordItems = Array<LogRecord>
 
 interface LogsState {
-  records: RecordItems;
+  records: LogRecordItems;
 }
 
 export const useLogsStore = defineStore('logsStore', {
@@ -19,11 +20,15 @@ export const useLogsStore = defineStore('logsStore', {
     logs: (state) => state.records,
   },
   actions: {
-    logRequest (label: string) {
+    async initLogs() {
+      const savedLogs = await retrieveLogs();
+      this.records = savedLogs;
+    },
+    logRequest(label: string) {
       this.records.push({
         timestamp: Date.now(),
         label
-      });
+      })
     }
   }
 })

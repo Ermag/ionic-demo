@@ -17,12 +17,12 @@ export const useAuthStore = defineStore('authStore', {
     authError: (state) => state.error,
   },
   actions: {
-    async login (email: string, password: string) {
+    async login(email: string, password: string) {
       const response = {
         status: ''
       }
       try {
-        const loginReq = await axios.post('login', { 
+        const loginReq = await axios.post('login', {
           email,
           password
         });
@@ -43,7 +43,7 @@ export const useAuthStore = defineStore('authStore', {
 
       return response;
     },
-    logout () {
+    logout() {
       this.token = null;
       this.error = null;
       return true;
