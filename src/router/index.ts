@@ -1,7 +1,7 @@
-import { useAuthStore } from '../store';
-import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import AppFrame from '../views/AppFrame.vue'
+import { createRouter, createWebHistory } from '@ionic/vue-router';
+import { authRouterHook } from '../services/auth';
+import AppFrame from '../views/AppFrame.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -52,19 +52,8 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-router.beforeEach(async (to, from, next): Promise<void> => {
-  const { requiresAuth } = to.meta;
-  const { isLoggedIn } = useAuthStore();
-  
-  if (requiresAuth && !isLoggedIn) {
-    return next({ name: 'login' });
-  } else if (isLoggedIn && to.name === 'login') {
-    return next({ name: 'home' });
-  }
-  
-  next();
-})
+router.beforeEach(authRouterHook);
 
 export default router
