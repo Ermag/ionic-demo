@@ -16,7 +16,7 @@
     <ion-icon slot="icon-only" :icon="camera"></ion-icon>
   </ion-button>
 
-  <div v-if="cameraImage.length && !isCameraActive" class="h-full mx-auto w-11/12 flex items-center justify-center">
+  <div v-if="cameraImage.length && !isCameraActive" class="mx-auto w-11/12">
     <div>
       <ion-img :src="cameraImage"></ion-img>
       <ion-label v-if="hasError" color="danger">
