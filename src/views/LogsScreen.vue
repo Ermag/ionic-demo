@@ -8,7 +8,10 @@
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">{{ t('logs') }}</ion-title>
+          <ion-title size="large">
+            {{ t('logs') }}
+            ({{ logs.length }})
+          </ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -18,15 +21,20 @@
 </template>
 
 <script setup lang="ts">
-  import { 
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-  } from '@ionic/vue';
-  import LogItems from '../components/LogItems.vue';
-  import { useI18n } from 'vue-i18n';
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+} from '@ionic/vue';
+import LogItems from '../components/LogItems.vue';
+import { useI18n } from 'vue-i18n';
+import { storeToRefs } from 'pinia';
+import { useLogsStore } from '../store';
 
-  const { t } = useI18n();
+const store = useLogsStore();
+const { logs } = storeToRefs(store);
+
+const { t } = useI18n();
 </script>

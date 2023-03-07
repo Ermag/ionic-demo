@@ -26,7 +26,7 @@ export const useAuthStore = defineStore('authStore', {
           email,
           password
         });
-        loginReq.data = loginReq.data.replace('status', '"status"'); // Dirty fix, API sends invalid JSON
+        loginReq.data = loginReq.data.replace('status:', '"status":'); // Dirty fix, API sends invalid JSON
         const { status, auth_token } = JSON.parse(loginReq.data);
         response.status = status;
 

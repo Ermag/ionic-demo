@@ -1,8 +1,18 @@
+<style scoped>
+ion-tab-bar {
+  position: fixed;
+  bottom: var(--ion-nav-offset);
+  left: var(--ion-nav-offset);
+  width: calc(100% - 2 * var(--ion-nav-offset));
+  --background: #fff;
+}
+</style>
+
 <template>
-  <ion-tab-bar slot="bottom">
+  <ion-tab-bar slot="bottom" class="border-gray-100 border-2 shadow-xl rounded-full h-14">
     <ion-tab-button tab="tab1" href="/tabs/home">
-      <ion-icon aria-hidden="true" :icon="camera" />
-      <ion-label>{{ t('camera') }}</ion-label>
+      <ion-icon aria-hidden="true" :icon="play" />
+      <ion-label>{{ t('liveFeed') }}</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="tab2" href="/tabs/logs">
@@ -18,14 +28,14 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    IonTabBar, 
-    IonTabButton, 
-    IonLabel, 
-    IonIcon,
-  } from '@ionic/vue';
-  import { camera, fileTrayFull, settings } from 'ionicons/icons';
-  import { useI18n } from 'vue-i18n';
+import {
+  IonTabBar,
+  IonTabButton,
+  IonLabel,
+  IonIcon,
+} from '@ionic/vue';
+import { play, fileTrayFull, settings } from 'ionicons/icons';
+import { useI18n } from 'vue-i18n';
 
-  const { t } = useI18n();
+const { t } = useI18n();
 </script>

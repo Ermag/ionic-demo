@@ -6,12 +6,16 @@
     "cancel": "Cancel",
     "send": "Send",
     "camera": "Camera",
+    "liveFeed": "Live Feed",
     "logs": "Logs",
     "settings": "Settings",
     "errors": {
-        "generic": "Something went wrong, please try again later."
+        "generic": "Something went wrong, please try again later.",
+        "invalidEmail": "Please enter a valid email.",
+        "invalidPassword": "Please enter your password."
     },
     "messages": {
+        "signIn": "Sign in to your account",
         "noLogs": "There are no records to show.",
         "noCredentials": "Unable to obtain credentials, please try again later."
     }
