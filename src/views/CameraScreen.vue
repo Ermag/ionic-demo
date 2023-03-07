@@ -18,4 +18,6 @@ import {
   IonContent
 } from '@ionic/vue';
 import CaptureImage from '@/components/CaptureImage.vue';
+import { StatusBar, Style } from '@capacitor/status-bar';
+StatusBar.setStyle({ style: Style.Light });
 </script>

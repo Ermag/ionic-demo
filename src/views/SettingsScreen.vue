@@ -9,7 +9,7 @@
       <div class="h-full grid">
         <ion-header collapse="condense">
           <ion-toolbar>
-            <ion-title size="large">{{ t('settings') }}</ion-title>
+            <ion-title size="large" class="mt-2">{{ t('settings') }}</ion-title>
           </ion-toolbar>
         </ion-header>
         <LogoutButton class="mx-auto w-11/12 justify-self-center" />

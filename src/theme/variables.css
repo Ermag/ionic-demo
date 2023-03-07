@@ -5,6 +5,7 @@ http://ionicframework.com/docs/theming/ */
 :root {
   --ion-font-family: gt-eesti-pro-display, sans-serif;
   --ion-nav-offset: 20px;
+  --ion-safe-area-bottom: 0;
 
   /** primary **/
   --ion-color-primary: #0433ff;

@@ -8,7 +8,7 @@
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">
+          <ion-title size="large" class="mt-2">
             {{ t('logs') }}
             ({{ logs.length }})
           </ion-title>

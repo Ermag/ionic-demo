@@ -9,7 +9,7 @@ ion-tab-bar {
 </style>
 
 <template>
-  <ion-tab-bar slot="bottom" class="border-gray-100 border-2 shadow-xl rounded-full h-14">
+  <ion-tab-bar slot="bottom" class="h-14 border-gray-100 border-2 shadow-xl rounded-full overflow-hidden">
     <ion-tab-button tab="tab1" href="/tabs/home">
       <ion-icon aria-hidden="true" :icon="play" />
       <ion-label>{{ t('liveFeed') }}</ion-label>

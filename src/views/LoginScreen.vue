@@ -31,4 +31,6 @@ import {
 } from '@ionic/vue';
 import LoginForm from '../components/LoginForm.vue';
 import AppLogo from '../components/MayvenLogo.vue';
+import { StatusBar, Style } from '@capacitor/status-bar';
+StatusBar.setStyle({ style: Style.Dark });
 </script>

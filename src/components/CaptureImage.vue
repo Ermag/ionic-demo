@@ -27,7 +27,7 @@
         <ion-spinner name="circular" color="light"></ion-spinner>
       </div>
       <div v-else class="grid grid-cols-2 gap-4 mt-2">
-        <ion-button expand="block" fill="outline" color="light" @click="doCancel">
+        <ion-button expand="block" fill="outline" color="danger" @click="doCancel">
           {{ t('cancel') }}
         </ion-button>
         <ion-button expand="block" color="primary" @click="doSend">
